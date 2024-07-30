@@ -1,0 +1,22 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:io.finsig.smoldotkotlin////PointingToDeclaration/smoldotkotlin/io.finsig.smoldotkotlin/index.html
+$dokka.location:io.finsig.smoldotkotlin//name/io.finsig.smoldotkotlin.Chain#/PointingToDeclaration/smoldotkotlin/io.finsig.smoldotkotlin/name.html
+$dokka.location:io.finsig.smoldotkotlin//name/org.json.JSONObject#/PointingToDeclaration/smoldotkotlin/io.finsig.smoldotkotlin/name.html
+$dokka.location:io.finsig.smoldotkotlin//readFromAsset/org.json.JSONObject#kotlin.String#android.content.Context/PointingToDeclaration/smoldotkotlin/io.finsig.smoldotkotlin/read-from-asset.html
+$dokka.location:io.finsig.smoldotkotlin/Chain///PointingToDeclaration/smoldotkotlin/io.finsig.smoldotkotlin/-chain/index.html
+$dokka.location:io.finsig.smoldotkotlin/Chain/Chain/#org.json.JSONObject/PointingToDeclaration/smoldotkotlin/io.finsig.smoldotkotlin/-chain/-chain.html
+$dokka.location:io.finsig.smoldotkotlin/Chain/specification/#/PointingToDeclaration/smoldotkotlin/io.finsig.smoldotkotlin/-chain/specification.html
+$dokka.location:io.finsig.smoldotkotlin/ChainId///PointingToDeclaration/smoldotkotlin/io.finsig.smoldotkotlin/-chain-id/index.html
+$dokka.location:io.finsig.smoldotkotlin/ChainSpecification///PointingToDeclaration/smoldotkotlin/io.finsig.smoldotkotlin/-chain-specification/index.html
+$dokka.location:io.finsig.smoldotkotlin/Client.Companion///PointingToDeclaration/smoldotkotlin/io.finsig.smoldotkotlin/-client/-companion/index.html
+$dokka.location:io.finsig.smoldotkotlin/Client.Companion/instance/#/PointingToDeclaration/smoldotkotlin/io.finsig.smoldotkotlin/-client/-companion/instance.html
+$dokka.location:io.finsig.smoldotkotlin/Client///PointingToDeclaration/smoldotkotlin/io.finsig.smoldotkotlin/-client/index.html
+$dokka.location:io.finsig.smoldotkotlin/Client/add/#io.finsig.smoldotkotlin.Chain/PointingToDeclaration/smoldotkotlin/io.finsig.smoldotkotlin/-client/add.html
+$dokka.location:io.finsig.smoldotkotlin/Client/isValid/#io.finsig.smoldotkotlin.Chain/PointingToDeclaration/smoldotkotlin/io.finsig.smoldotkotlin/-client/is-valid.html
+$dokka.location:io.finsig.smoldotkotlin/Client/remove/#io.finsig.smoldotkotlin.Chain/PointingToDeclaration/smoldotkotlin/io.finsig.smoldotkotlin/-client/remove.html
+$dokka.location:io.finsig.smoldotkotlin/Client/response/#io.finsig.smoldotkotlin.Chain/PointingToDeclaration/smoldotkotlin/io.finsig.smoldotkotlin/-client/response.html
+$dokka.location:io.finsig.smoldotkotlin/Client/responses/#io.finsig.smoldotkotlin.Chain/PointingToDeclaration/smoldotkotlin/io.finsig.smoldotkotlin/-client/responses.html
+$dokka.location:io.finsig.smoldotkotlin/Client/send/#com.thetransactioncompany.jsonrpc2.JSONRPC2Request#io.finsig.smoldotkotlin.Chain/PointingToDeclaration/smoldotkotlin/io.finsig.smoldotkotlin/-client/send.html
+io.finsig.smoldotkotlin
+
