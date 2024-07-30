@@ -24,7 +24,7 @@ Instructions on how to build the AAR module are provided in the **Building Local
 
 A Chain Specification file must be provided to initialize a chain. A Chain Specification is a JSON Object that describes a Polkadot-based blockchain network.
 
-*Example Chain Specification JSON files for Polkadot, Kusama, Rococo, and Westend can be copied for use from [/smoldotkotlin/src/androidTest/assets](https://github.com/finsig/smoldot-kotlin/smoldotkotlin/src/androidTest/assets).*
+*Example Chain Specification JSON files for Polkadot, Kusama, Rococo, and Westend can be copied for use from [/smoldotkotlin/src/androidTest/assets](https://github.com/finsig/smoldot-kotlin/tree/main/smoldotkotlin/src/androidTest/assets).*
 
 Initialize a chain from a specification file:
 
