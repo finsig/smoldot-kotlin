@@ -37,3 +37,7 @@ output.json
 #NDK
 obj/
 .externalNativeBuild
+/distribution/smoldot/lib/x86/libsmoldot_c_ffi.a
+/distribution/smoldot/lib/x86_64/libsmoldot_c_ffi.a
+/distribution/smoldot/lib/armeabi-v7a/libsmoldot_c_ffi.a
+/distribution/smoldot/lib/arm64-v8a/libsmoldot_c_ffi.a
