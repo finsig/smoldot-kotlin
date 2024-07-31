@@ -1,56 +1,33 @@
-name: Build, test, and deploy API docs
+name: Docs
 
 on:
   push:
-    branches: [ master ]
-    paths-ignore: [ 'docs/**', 'README.md' ]
-  pull_request:
-    branches: [ master ]
-  release:
-    types: [published]
-  workflow_dispatch:
+    branches: [ main ]
 
-concurrency:
-  group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
-  cancel-in-progress: true
+ ## Delete below when merged to main!
+ ## Added such that one can test pages deployment on branch before merging
+  pull_request:
+    branches: [ main ] 
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        distribution: temurin
-        java-version: 17
-        
-    - name: Build and run tests
-      id: build
-      run: |
-        if ! ./gradlew build; then
-          # Address a rare unit test failure very likely to be a test-harness-related
-          # race condition.
-          echo "Build failed, retrying once"
-          if ! ./gradlew build; then
-            exit 1
-          fi
-        fi
-        
-    - name: Generate API documentation
-      if: ${{ github.ref == 'refs/heads/master' && github.event_name != 'pull_request' }}
-      run: |
-        VERSION=$(git tag --sort=committerdate | tail -1)
-        echo Generating API documentation for version $VERSION
-        ./gradlew -Pversion=$VERSION dokkaHtml
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: 21
+          distribution: 'adopt'
 
-    - name: Deploy API documentation to Github Pages
-      if: ${{ github.ref == 'refs/heads/master' && github.event_name != 'pull_request' }}
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        branch: gh-pages
-        folder: build/dokka/html
-        target-folder: api
+      - name: Build documentation
+        run: ./gradlew dokkaHtml
+
+      - name: Publish documentation
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          BRANCH: gh-pages
+          FOLDER: smoldotkotlin/build/dokka/html
