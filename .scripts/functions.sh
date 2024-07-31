@@ -138,9 +138,25 @@ post_build::copy_abi_libraries_to_project() {
 }
 
 post_build::success() {
-    log::success "▸ BUILD SUCCESSFUL!"
     log::success ''
     if [ $BUILD_CONFIG = "release" ]; then
         log::success "Built artifacts can be found at $DISTRIBUTION_DIRECTORY"
     fi
+}
+
+docker::build() {
+	log::message "Build Docker container"
+	cd $ROOT_DIRECTORY
+	docker build -t "finsig:Dockerfile" .
+}
+
+docker::run() {
+	log::message "Build smoldotkotlin library"
+	docker run --rm -v `pwd`:/project finsig:Dockerfile bash -c 'cd /project; ./gradlew smoldotkotlin:bundleReleaseAar'
+}
+
+docker::success() {
+	log::success "▸ BUILD SUCCESSFUL!"
+	log::success ''
+	log::success "AAR can be found at $ROOT_DIRECTORY/smoldotkotlin/build/outputs/aar"
 }
