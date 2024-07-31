@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">Smoldot Kotlin</string>
-    <string name="chain_list">Chains</string>
-    <string name="remote_procedure_call">RPC</string>
-    <string name="back_button">Back</string>
-</resources>
