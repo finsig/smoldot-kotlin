@@ -80,42 +80,26 @@ android {
 
 ## Building locally
 
-There is a build_smoldotlibs.sh script in the repo which can be used to build the static C++ Rust FFI library files for inclusion in the AAR.
-
-
-```zsh
-$ zsh build_smoldotlibs.sh
-```
-
-A Dockerfile is provided to build the AAR for the project.
-
-Note: the Dockerfile is configured to run on 64-bit architecture. If using x86 architecture, remove the `--platform` flag from the Dockerfile.
-
-
-Build a Docker image from the Dockerfile:
+There is a build_smoldotkotlin.sh script in the repo which can be used to build the Android Library archive.
 
 ```zsh
-docker build -t "finsig:Dockerfile" .
+$ zsh build_smoldotkotlin.sh
 ```
 
-Gradle Wrapper can then be invoked as follows:
+After building the Rust FFI libraries the script will build the AAR from a Docker container.
 
-```zsh
- docker run --rm -v \
-  `pwd`:/project \
-  finsig:Dockerfile bash -c 'cd /project; \
-  ./gradlew smoldotkotlin:bundleReleaseAar'  \
-  --platform=linux/amd64
-```
+Note: the Dockerfile is configured to run on 64-bit architecture. If using x86 architecture, remove the `--platform` flag from the ubuntu build stage of the [Dockerfile](https://github.com/finsig/smoldot-kotlin/blob/bde451561f8c2003c184434406ebd2923fa6689f/Dockerfile#L39).
+
 
 See [GitHub issues](https://github.com/finsig/smoldot-kotlin/issues) for notes regarding warning messages.
 
 
 ## Testing
 
-Instrumentation tests are used to test the NDK based functionality using the Android framework APIs.
+Unit tests are provided in the form of instrumented tests as access to Android framework dependencies is required. These tests require access to the emulator and can be run from Android Studio.
 
 
 ## Notes
 
 The Dockerfile is a fork of [Docker Android Build Box](https://github.com/finsig/docker-android-build-box).
+
