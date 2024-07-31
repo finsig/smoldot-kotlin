@@ -4,11 +4,6 @@ on:
   push:
     branches: [ main ]
 
- ## Delete below when merged to main!
- ## Added such that one can test pages deployment on branch before merging
-  pull_request:
-    branches: [ main ] 
-
 jobs:
   publish:
     runs-on: ubuntu-latest
