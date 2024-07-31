@@ -11,11 +11,6 @@ Add the following dependency to your `build.gradle.kts`:
 implementation("io.finsig:smoldotkotlin:0.1.1")
 ```
 
-
-Smoldot Kotlin has been published to the [Maven Central](
-https://central.sonatype.com/artifact/io.finsig/smoldotkotlin) repository and does not require any additional Android Studio configuration.
-
-
 ## Usage
 
 A Chain Specification file must be provided to initialize a chain. A Chain Specification is a JSON Object that describes a Polkadot-based blockchain network.
