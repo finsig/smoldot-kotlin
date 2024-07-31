@@ -5,19 +5,15 @@ A Kotlin wrapper for the [smoldot](https://github.com/smol-dot/smoldot) Rust-bas
 
 ## Installation
 
-Smoldot Kotlin is an Android Archive Library (AAR) and has been published to [Maven Central](
-https://central.sonatype.com/artifact/io.finsig/smoldotkotlin).
+Add the following dependency to your `build.gradle.kts`:
 
-Add the following to the dependencies section of your `build.gradle.kts`:
 ```kotlin
 implementation("io.finsig:smoldotkotlin:0.1.1")
 ```
 
 
-
-The Android Studio project provided contains an example app with a local library module dependency for demonstration purposes.
-
-Instructions on how to build the AAR module are provided in the **Building Locally** section of this document.
+Smoldot Kotlin has been published to the [Maven Central](
+https://central.sonatype.com/artifact/io.finsig/smoldotkotlin) repository and does not require any additional Android Studio configuration.
 
 
 ## Usage
@@ -65,6 +61,7 @@ To disconnect the client from the network use:
 Client.instance().remove(chain)
 ```
 
+For additional information about usage see [reference documentation](https://finsig.github.io/smoldot-kotlin/smoldotkotlin/io.finsig.smoldotkotlin/index.html).
 
 ## Logging
 
