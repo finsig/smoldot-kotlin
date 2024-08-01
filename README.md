@@ -81,7 +81,7 @@ There is a build_smoldotkotlin.sh script in the repo which can be used to build 
 $ zsh build_smoldotkotlin.sh
 ```
 
-After building the Rust FFI libraries the script will build the AAR from a Docker container.
+After building the Rust FFI libraries the script will build the `AAR` from a Docker container.
 
 Note: the Dockerfile is configured to run on 64-bit architecture. If using x86 architecture, remove the `--platform` flag from the ubuntu build stage of the [Dockerfile](https://github.com/finsig/smoldot-kotlin/blob/bde451561f8c2003c184434406ebd2923fa6689f/Dockerfile#L39).
 
@@ -91,7 +91,7 @@ See [GitHub issues](https://github.com/finsig/smoldot-kotlin/issues) for notes r
 
 ## Testing
 
-Unit tests are provided in the form of instrumented tests as access to Android framework dependencies is required. These tests require access to the emulator and can be run from Android Studio.
+Unit tests are provided in the form of instrumented tests. Regular unit tests will not work because they do not provide access to Android specific framework dependencies. These tests require an Android Virtual Device (AVD) or attached physical device, and can be run from Android Studio.
 
 
 ## Notes
