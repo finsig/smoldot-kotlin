@@ -75,33 +75,21 @@ android {
 
 ## Building locally
 
-The Android Native Development Kit (NDK) requires access to Android specific framework dependencies.
-Although a Dockerfile is provided to build the AAR from the command line, Android Studio is recommended for local development and testing.
- 
-The following Android Studio Configuration was used to build locally:
-
-```
-Android Studio Koala | 2024.1.1 Patch 1
-Build #AI-241.18034.62.2411.12071903, built on July 10, 2024
-Runtime version: 17.0.11+0-17.0.11b1207.24-11852314 aarch64
-VM: OpenJDK 64-Bit Server VM by JetBrains s.r.o.
-macOS 14.3.1
-```
-
-**Android Studio > Tools > SDK Manager > SDK Tools:**
+The following Android Studio tools are required to build locally:
 * SDK Tools v34.0.0
 * NDK (Side by side) v26.1.10909125
 * CMake v3.22.1
 
 ### Shell Script
-The NDK code is built using CMake and called from Kotlin using the Java Native Interface (JNI). Static C++ library files for each Android Application Binary Interface (ABI) are required. The build_abilibs shell script will build the static library files required for each Android ABI. 
+The NDK code is built using CMake and called from Kotlin using the Java Native Interface (JNI). The provided shell script can be used to build the static libary files for each Android ABI.
 
 ```zsh
-$ zsh build_abilibs.sh
+$ zsh build_staticlibs.sh
 ```
+
 ### Dockerfile
 
-A Dockerfile is provided to build (but not test) the AAR for the project.
+A Dockerfile is provided that can build (but not test) the AAR for the project.
 
 Note: the Dockerfile is configured to run on 64-bit architecture. If using x86 architecture, remove the `--platform` flag from the ubuntu build stage of the [Dockerfile](https://github.com/finsig/smoldot-kotlin/blob/bde451561f8c2003c184434406ebd2923fa6689f/Dockerfile#L39).
 
