@@ -19,7 +19,3 @@ post_build::create_distribution_directory
 post_build::copy_abi_libraries_to_project
 
 post_build::success
-
-docker::build
-docker::run
-docker::success
